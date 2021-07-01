@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">vk_agent</string>
+    <string name="welcome">Добро пожаловать</string>
+    <string name="enter">Войти</string>
+</resources>
