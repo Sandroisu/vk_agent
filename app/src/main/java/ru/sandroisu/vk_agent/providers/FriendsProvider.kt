@@ -13,11 +13,11 @@ class FriendsProvider(var presenter:FriendsPresenter) {
             val friendList:ArrayList<FriendModel> = ArrayList()
             if (hasFriends){
                 val friend1 = FriendModel("Ivan", "Petrov",
-                    null, R.drawable.ic_baseline_supervised_user_circle_24, true)
+                    null, R.drawable.lingerie_5286478_640, true)
                 val friend2 = FriendModel("Egor", "Egorov",
-                    null, R.drawable.ic_baseline_supervised_user_circle_24, true)
+                    null, "https://icdn.lenta.ru/images/2020/03/19/19/20200319193108072/pic_78f9bed8a525f230f91a6245f3c63fe8.jpg", true)
                 val friend3 = FriendModel("Serega", "Pavlov",
-                    null, R.drawable.ic_baseline_supervised_user_circle_24, false)
+                    null, "https://globalmsk.ru/usr/person/big-person-15661342871.jpg", false)
                 friendList.add(friend1)
                 friendList.add(friend2)
                 friendList.add(friend3)

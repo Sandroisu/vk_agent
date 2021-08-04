@@ -18,7 +18,7 @@ class FriendsPresenter:MvpPresenter<FriendsView>() {
             viewState.setupEmptyList()
             viewState.showError(text = "You have no friends")
         }else{
-            viewState.setupFriendsList(friendsList)
+            viewState.setupFriendsList(friendsList = friendsList)
         }
     }
 

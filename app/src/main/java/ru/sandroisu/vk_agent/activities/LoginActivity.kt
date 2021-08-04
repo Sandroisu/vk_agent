@@ -14,27 +14,28 @@ import ru.sandroisu.vk_agent.presenters.LoginPresenter
 import ru.sandroisu.vk_agent.views.LoginView
 
 class LoginActivity : MvpAppCompatActivity(), LoginView {
-    private lateinit var tvHello: TextView
-    private lateinit var btnLogin: Button
-    private lateinit var progress: CircularProgressView
+    private lateinit var mTxtLoginHello: TextView
+    private lateinit var mBtnEnter: Button
+    private lateinit var mCpvWait: CircularProgressView
+
     @InjectPresenter
     lateinit var loginPresenter: LoginPresenter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        tvHello = findViewById(R.id.txt_login_hello)
-        btnLogin = findViewById(R.id.btn_login)
-        progress = findViewById(R.id.cpv_login)
-
-        btnLogin.setOnClickListener { loginPresenter.login(isSuccess = true) }
+        mTxtLoginHello = findViewById(R.id.txt_login_hello)
+        mBtnEnter = findViewById(R.id.btn_login)
+        mCpvWait = findViewById(R.id.cpv_login)
+        mBtnEnter.setOnClickListener { loginPresenter.login(isSuccess = true) }
 
     }
 
 
     override fun startLoading() {
-        btnLogin.visibility = View.GONE
-        progress.visibility = View.VISIBLE
+        mBtnEnter.visibility = View.GONE
+        mCpvWait.visibility = View.VISIBLE
     }
 
     override fun openFriends() {
@@ -42,8 +43,8 @@ class LoginActivity : MvpAppCompatActivity(), LoginView {
     }
 
     override fun endLoading() {
-        btnLogin.visibility = View.VISIBLE
-        progress.visibility = View.GONE
+        mBtnEnter.visibility = View.VISIBLE
+        mCpvWait.visibility = View.GONE
     }
 
     override fun showError(text: String) {
